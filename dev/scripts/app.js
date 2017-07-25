@@ -1,7 +1,7 @@
 const makeupApp = {}
 
 makeupApp.init = function(){
-		makeupApp.getMakeup();
+	makeupApp.getMakeup();
 };
 
 makeupApp.getMakeup = function(){
@@ -29,7 +29,6 @@ makeupApp.displayMakeup = function(data){
 		$('.pieces').append(makeupPiece);
 	});
 };
-
 
 
 $(function(){
