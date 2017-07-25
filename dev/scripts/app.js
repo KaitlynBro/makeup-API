@@ -12,6 +12,7 @@ makeupApp.getMakeup = function(){
 	}).then(function(res) {
 	  console.log(res);
 	  makeupApp.displayMakeup(res);
+	  console.log('hi')
 	});
 };
 
@@ -31,8 +32,10 @@ makeupApp.displayMakeup = function(data){
 };
 
 
+function hello() {
+	console.log('hi')
+};
+
 $(function(){
 		makeupApp.init();
 });
-
-hhhhhhhhhhhhhhh

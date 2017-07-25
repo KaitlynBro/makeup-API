@@ -17,7 +17,7 @@ gulp.task("styles", () => {
 });
 
 gulp.task("scripts", () => {
-	return gulp.src("./dev/scripts/main.js").pipe(babel({
+	return gulp.src("./dev/scripts/app.js").pipe(babel({
 		presets: ["es2015"]
 	}))
 	.pipe(gulp.dest("./public/scripts"))
@@ -26,7 +26,7 @@ gulp.task("scripts", () => {
 
 gulp.task("watch", () => {
 	gulp.watch("./dev/styles/**/*.scss", ["styles"]);
-	gulp.watch("./dev/scripts/main.js", ["scripts"]);
+	gulp.watch("./dev/scripts/app.js", ["scripts"]);
 	gulp.watch("*.html", reload);
 });
 
