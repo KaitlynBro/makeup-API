@@ -1,41 +1,49 @@
+//on page load, display nav bar with all brands
+//if user clicks on certain brand, bring up all of that brands makeup
+//also bring up new nav bar with the different product types
+//if user clicks on certain product type, display only that product brand and type
+//also now display new nav bar with product tags (ie. vegan, gluten free, etc)
+//if user clicks on a certain tag, display only that brands product type that fits that tag
+
 const makeupApp = {}
 
-makeupApp.init = function(){
+makeupApp.init = function() {
 	makeupApp.getMakeup();
-};
+	makeupApp.displayBrands();
+}
 
-makeupApp.getMakeup = function(){
-		$.ajax({
+makeupApp.getMakeup = function(productType, productBrand){
+	$.ajax({
 	  url: 'http://makeup-api.herokuapp.com/api/v1/products.json',
 	  method: 'GET',
 	  dataType: 'json',
+	  data: {
+	  	product_type: productType,
+	  	product_brand: productBrand
+	  }
 	}).then(function(res) {
-	  console.log(res);
-	  makeupApp.displayMakeup(res);
-	  console.log('hi')
+		// console.log(res)
+		makeupApp.displayBrands(res)
 	});
 };
 
-//makeupApp.displayMakeup = function(data){
-makeupApp.displayMakeup = function(data){
-		data.forEach(function(res){
-    	const brand = $('<h2>').text(res.brand);
-    	const name = $('<p>').text(res.name);
-    	const link = $('<p>').text(res.product_link);
-    	const price = $('<p>').text(res.price);
-    	const image = $('<img>').attr('src', res.image_link);
+//if user clicks on certain brand, append name of that brand to page and all of the related makeup
+makeupApp.displayBrands = function(data) {
+	//console.log(data)
+	$('.makeup-brand-button').click(data, function() {
+		let brandSelected = $('input[name=brand]:checked');
+		document.getElementById('makeupContainer').append(`${brandSelected.val()}`);
+		console.log(data[0])
+		// const filterBrands = data.filter(function(data, brand) {
+		// 	return data.brand === brandSelected;
+		// })
+	})
+}	
 
-
-		var makeupPiece = $('<div>').addClass('piece').append(brand, name, link, price, image);
-		$('.pieces').append(makeupPiece);
-	});
-};
-
-
-function hello() {
-	console.log('hi')
-};
 
 $(function(){
-		makeupApp.init();
+	makeupApp.init();
 });
+
+ 
+ 
