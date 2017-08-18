@@ -9,7 +9,6 @@ const makeupApp = {}
 
 makeupApp.init = function() {
 	makeupApp.getMakeup();
-	//makeupApp.displayBrands();
 }
 
 makeupApp.getMakeup = function(productType, productBrand){
@@ -23,7 +22,7 @@ makeupApp.getMakeup = function(productType, productBrand){
 	  }
 	}).then(function(res) {
 		// console.log(res)
-		makeupApp.displayBrands(res)
+		makeupApp.displayBrands(res);
 	});
 };
 
@@ -39,10 +38,27 @@ makeupApp.displayBrands = function(products) {
         //console.log(filterBrands);
         for (var i = 0; i < filterBrands.length; i++) {
     		console.log(filterBrands[i]);
-    		$('#makeupContainer').append(`<h2>${filterBrands[i].brand}</h2> <h3>${filterBrands[i].name}</h3> <img src="${filterBrands[i].image_link}" alt="" />`)
+    		$('#makeupContainer').append(`<h2>${filterBrands[i].brand}</h2> <h3>${filterBrands[i].name}</h3> <img src="${filterBrands[i].image_link}" alt="" /> <p>${filterBrands[i].tag_list}`)
 		}
+		makeupApp.filterTags(products);
     })
-}    
+} 
+
+makeupApp.filterTags = function(products) {
+	//console.log(products);
+	$('.makeup-ajax-button').click(products, function() {
+		$('#makeupContainer').empty();
+		let tagSelected = $('input[name=tag]:checked').val();
+		let brandSelected = $('input[name=brand]:checked').val();
+		const filterTags = products.filter(function(product) {
+			return product.tag_list == tagSelected;
+			return product.brand === brandSelected; 
+		})
+		for (var i = 0; i < filterTags.length; i++) {
+			$('#makeupContainer').append(`<h2>${filterTags[i].name}</h2> <h3>${filterTags[i].name} <img src="${filterTags[i].image_link}" alt="" />  <p>${filterTags[i].tag_list}`);
+		}
+	})
+}   
 
 
 $(function(){

@@ -6,6 +6,7 @@
 </head>
 <body>
 
+<header>
 	<div class="makeupBrands">
 		<nav>
 			<ul>
@@ -49,30 +50,45 @@
 			</ul>
 		</nav>
 	</div>
+	<div>
+		<nav>
+			<ul>
+				<input type="radio" name="type" value="blush" class="product-type">Blush</input>
+				<input type="radio" name="type" value="bronzer" class="product-type">Bronzer</input>
+				<input type="radio" name="type" value="eyebrow" class="product-type">Eyebrow</input>
+				<input type="radio" name="type" value="eyeliner" class="product-type">Eyeliner</input>
+				<input type="radio" name="type" value="eyeshadow" class="product-type">Eyeshadow</input>
+				<input type="radio" name="type" value="foundation" class="product-type">Foundation</input>
+				<input type="radio" name="type" value="lip_liner" class="product-type">Lip Liner</input>
+				<input type="radio" name="type" value="lipstick" class="product-type">Lipstick</input>
+				<input type="radio" name="type" value="mascara" class="product-type">Mascara</input>
+				<input type="radio" name="type" value="nail_polish" class="product-type">Nail Polish</input>
+			</ul>
+		</nav>
+	</div>
 
 	<div class="makeupTypes">
 		<nav>
 			<ul>
-				<button class="makeup-ajax-button" data-product-type="mascara">Mascara</button>
-				<button class="makeup-ajax-button" data-product-type="eyebrow">Eyebrow</button>
-				<button class="makeup-ajax-button" data-product-type="eyeliner">Eyeliner</button>
-				<button class="makeup-ajax-button" data-product-type="eyeshadow">Eyeshadow</button>
-				<button class="makeup-ajax-button" data-product-type="foundation">Foundation</button>
-				<button class="makeup-ajax-button" data-product-type="blush">Blush</button>
-				<button class="makeup-ajax-button" data-product-type="bronzer">Bronzer</button>
-				<button class="makeup-ajax-button" data-product-type="lipstick">Lipstick</button>
-				<button class="makeup-ajax-button" data-product-type="lip_liner">Lipliner</button>
-				<button class="makeup-ajax-button" data-product-type="nail_polish">NailPolish</button>
-			</ul>
-		</nav>
-		<nav id="tags">
-			<ul>
-				
+				<input type="radio" name="tag" value="Vegan" class="makeup-ajax-button">Vegan</input>
+				<input type="radio" name="tag" value="Canadian" class="makeup-ajax-button">Canadian</input>
+				<input type="radio" name="tag" value="Natural" class="makeup-ajax-button">Natural</input>
+				<input type="radio" name="tag" value="Sugar Free" class="makeup-ajax-button">Sugar Free</input>
+				<input type="radio" name="tag" value="Dairy Free" class="makeup-ajax-button">Dairy Free</input>
+				<input type="radio" name="tag" value="Non-GMO" class="makeup-ajax-button">Non-GMO</input>
+				<input type="radio" name="tag" value="Fair Trade" class="makeup-ajax-button">Fair Trade</input>
+				<input type="radio" name="tag" value="Organic" class="makeup-ajax-button">Organic</input>
+				<input type="radio" name="tag" value="Gluten Free" class="makeup-ajax-button">Gluten Free</input>
+				<input type="radio" name="tag" value="Peanut Free Product" class="makeup-ajax-button">Peanut Free Product</input>	
 			</ul>
 		</nav>
 	</div>
-	<div id="makeupContainer">
-	</div>
+</header>
+
+<section>
+	<div id="makeupContainer"></div>	
+</section>
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="public/scripts/app.js"></script>
