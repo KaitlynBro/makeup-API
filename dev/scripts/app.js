@@ -9,7 +9,7 @@ const makeupApp = {}
 
 makeupApp.init = function() {
 	makeupApp.getMakeup();
-	makeupApp.displayBrands();
+	//makeupApp.displayBrands();
 }
 
 makeupApp.getMakeup = function(productType, productBrand){
@@ -28,22 +28,25 @@ makeupApp.getMakeup = function(productType, productBrand){
 };
 
 //if user clicks on certain brand, append name of that brand to page and all of the related makeup
-makeupApp.displayBrands = function(data) {
-	//console.log(data)
-	$('.makeup-brand-button').click(data, function() {
-		let brandSelected = $('input[name=brand]:checked');
-		document.getElementById('makeupContainer').append(`${brandSelected.val()}`);
-		console.log(data[0])
-		// const filterBrands = data.filter(function(data, brand) {
-		// 	return data.brand === brandSelected;
-		// })
-	})
-}	
+makeupApp.displayBrands = function(products) {
+    //console.log(products)
+    $('.makeup-brand-button').click(products, function() {
+    	$('#makeupContainer').empty();
+        let brandSelected = $('input[name=brand]:checked').val();
+        const filterBrands = products.filter(function(product) {
+            return product.brand === brandSelected;
+        })
+        //console.log(filterBrands);
+        for (var i = 0; i < filterBrands.length; i++) {
+    		console.log(filterBrands[i]);
+    		$('#makeupContainer').append(`<h2>${filterBrands[i].brand}</h2> <h3>${filterBrands[i].name}</h3> <img src="${filterBrands[i].image_link}" alt="" />`)
+		}
+    })
+}    
 
 
 $(function(){
 	makeupApp.init();
 });
 
- 
  
