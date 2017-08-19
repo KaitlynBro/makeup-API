@@ -1,3 +1,7 @@
+#makeupResults {
+	margin-bottom: 200px;
+}
+
 .makeupBrands {
 	display: flex;
     flex-direction: row;
@@ -10,16 +14,30 @@
 	position: relative;
 }
 
+#aboutWebsite {
+	display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 20px;
+    p {
+    	margin: 0;
+    	line-height: 1.5;
+    }
+}
+
 #makeupContainer {
 	display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
 }
 
 .makeupInfo {
 	font-family: 'Raleway', sans-serif;
 	margin: 50px;
     text-align: center;
+    width: 33.3%;
+    border: 20px solid #ebabd7;
 }
 
 h3 {

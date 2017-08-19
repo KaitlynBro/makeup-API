@@ -45,7 +45,7 @@ h1 {
 }
 
 .hamburger-checkbox:checked ~ .hamburger-label:before {
-  content: '\f00d';
+  //content: '\f00d';
   position: absolute;
   top: 0;
   left: 0;

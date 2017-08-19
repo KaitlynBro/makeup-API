@@ -42,8 +42,9 @@ makeupApp.displayBrands = function(products) {
     			<div class="makeupInfo">
     				<h2>${filterBrands[i].brand}</h2> 
     				<h3>${filterBrands[i].name}</h3> 
-    				<img src="${filterBrands[i].image_link}" alt="" /> 
-    				<p class="tags">${filterBrands[i].tag_list}</p>
+    				<div><img src="${filterBrands[i].image_link}" alt="" /></div>
+    				<p class="tags">Features: ${filterBrands[i].tag_list}</p>
+    				<a href="${filterBrands[i].product_link}" target="_blank">Product url</a>
     			</div>`)
 		}
 		makeupApp.filterProductTypes(products);
@@ -64,8 +65,8 @@ makeupApp.filterProductTypes = function(products) {
 				<div class="makeupInfo">
 					<h2>${filterProducts[i].brand}</h2>
 					<h3>${filterProducts[i].name}</h3> 
-    				<img src="${filterProducts[i].image_link}" alt="" /> 
-    				<p class="tags">${filterProducts[i].tag_list}</p>
+    				<div><img src="${filterProducts[i].image_link}" alt="" /></div>
+    				<p class="tags">Features: ${filterProducts[i].tag_list}</p>
 				</div>`)
 		}
 	})
@@ -85,8 +86,8 @@ makeupApp.filterTags = function(products) {
 				<div class="makeupInfo">
 					<h2>${filterTags[i].name}</h2> 
 					<h3>${filterTags[i].name}</h3> 
-					<img src="${filterTags[i].image_link}" alt="" />  
-					<p class="tags">${filterTags[i].tag_list}</p>
+					<div><img src="${filterTags[i].image_link}" alt="" /></div>
+					<p class="tags">Features: ${filterTags[i].tag_list}</p>
 				</div>`);
 		}
 	})

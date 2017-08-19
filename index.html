@@ -5,9 +5,9 @@
 	<title>makeup</title>
 	<link rel="stylesheet" type="text/css" href="./public/styles/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script|Raleway" rel="stylesheet">
+	<script src="https://use.fontawesome.com/b13619d841.js"></script>
 </head>
 <body>
-
 <header>
 	<div class="makeupBrands">
 		<input id="hamburger" type="checkbox" class="hamburger-checkbox">
@@ -56,7 +56,6 @@
 	</div>
 	<h1 id="title">What's in Your Makeup Bag?</h1>
 </header>
-
 <section id="secondaryNavs">
 	<div class="makeupBrands">
 		<input id="hamburger" type="checkbox" class="hamburger-checkbox">
@@ -75,7 +74,6 @@
 				<li><input type="radio" name="type" value="nail_polish" class="product-type">Nail Polish</input></li>
 			</ul>
 		</nav>
-
 		<input id="hamburger" type="checkbox" class="hamburger-checkbox">
   		<label for="hamburger" class="hamburger-label hamburger-label2 makeupTagNav" role="button" value="hhh" aria-labelledby="menu">&#xf0c9;</label>
 		<nav role="navigation" class="sidebar">
@@ -93,16 +91,31 @@
 			</ul>
 		</nav>
 	</div>
+	<div id="aboutWebsite">
+		<p>Have you ever wondered what goes into the makeup that you use? Depending on the brand of makeup, there are various ingredients that can be harmful to your body, especially if you have more sensitive or acne-prone skin.</p>
+		<p>Take a look through some makeup brands here. You can filter by brand, product type, or even by product feature, such as gluten-free, dairy-free, vegan, and more.</p>
+		<p>*Please note: Not every product will provide information on what's in the ingredients. I have included urls to the product page so you may find further information there :).</p>
+	</div>
 </section>
 
-<section>
+<section id="makeupResults">
 	<div id="makeupContainer"></div>	
 </section>
 
+<footer>
+<div id="footerInfo">
+	<p>Made by Kaitlyn Brouwers</p>
+	<div>
+		<a href="https://twitter.com/kaitlynbrouwers" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+		<a href="http://bit.ly/2sfyYKV" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+		<a href="https://medium.com/@katiebrouwers" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
+		<a href="https://github.com/KaitlynBro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+	</div>
+</div>	
+</footer>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script src="public/scripts/app.js"></script>
-<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
- --></body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="public/scripts/app.js"></script>
+</body>
 </html>
 

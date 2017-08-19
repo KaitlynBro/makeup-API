@@ -1,0 +1,16 @@
+footer {
+	background-color: #b5b7c7;
+	p:first-child {
+		padding-top: 50px;
+		font-family: 'Raleway', sans-serif;
+	}
+	.fa {
+		padding-bottom: 50px;
+	}
+}
+
+#footerInfo {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
