@@ -98,13 +98,20 @@ makeupApp.filterTags = function(products) {
 	})
 }
 
+//remove h1 from DOM once menu button is pressed to avoid overlap
+document.getElementById('menuButton').addEventListener('click', function() {
+	document.getElementById('title').style.display = 'none';
+})
+ 
+
+//reload page 
 document.getElementById('refreshPage').addEventListener('click', function() {
 	console.log('hi');
 	location.reload();
 	window.scrollTo(0, 0);
 })
 
-
+//smooth scroll
 $('input[type=radio]').click(function() {
     $('html, body').animate({
         scrollTop: $('#makeupContainer').offset().top

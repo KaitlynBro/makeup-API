@@ -13,6 +13,24 @@ body {
 	color: #fd4da2;
 }
 
+//media queries
 
-
+@media (max-width: 650px) {
+	h1 {
+		width: 80%;
+	}
+	.makeupBrands {
+		margin-bottom: 120px;
+	}
+	ul.menu1 {
+		width: 100%;
+    	margin-left: 0;
+    	li {
+    		padding: 0;
+    	}
+	}
+	#makeupResults {
+		margin-top: 100px;
+	}
+}
 
