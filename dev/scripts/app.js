@@ -44,7 +44,8 @@ makeupApp.displayBrands = function(products) {
     				<h3>${filterBrands[i].name}</h3> 
     				<div><img src="${filterBrands[i].image_link}" alt="" /></div>
     				<p class="tags">Features: ${filterBrands[i].tag_list}</p>
-    				<a href="${filterBrands[i].product_link}" target="_blank">Product url</a>
+    				<a href="${filterBrands[i].product_link}" target="_blank" class="pinkText">Product url</a>
+    				<p>${filterBrands[i].description}</p>
     			</div>`)
 		}
 		makeupApp.filterProductTypes(products);
@@ -67,6 +68,8 @@ makeupApp.filterProductTypes = function(products) {
 					<h3>${filterProducts[i].name}</h3> 
     				<div><img src="${filterProducts[i].image_link}" alt="" /></div>
     				<p class="tags">Features: ${filterProducts[i].tag_list}</p>
+    				<a href="${filterProducts[i].product_link}" target="_blank" class="pinkText">Product url</a>
+    				<p>${filterProducts[i].description}</p>
 				</div>`)
 		}
 	})
@@ -88,15 +91,39 @@ makeupApp.filterTags = function(products) {
 					<h3>${filterTags[i].name}</h3> 
 					<div><img src="${filterTags[i].image_link}" alt="" /></div>
 					<p class="tags">Features: ${filterTags[i].tag_list}</p>
+					<a href="${filterTags[i].product_link}" target="_blank" class="pinkText">Product url</a>
+    				<p>${filterTags[i].description}</p>
 				</div>`);
 		}
 	})
-}   
+}
+
+document.getElementById('refreshPage').addEventListener('click', function() {
+	console.log('hi');
+	location.reload();
+	window.scrollTo(0, 0);
+})
 
 
+$('input[type=radio]').click(function() {
+    $('html, body').animate({
+        scrollTop: $('#makeupContainer').offset().top
+    }, 1000);
+});
 
 $(function(){
 	makeupApp.init();
 });
+
+
+/*Problems to address
+1. hide h1 on click of main menu button, unhide on second click
+2. why are all my menu buttons all making brands appear? ie. clicking on product type button, ingredient type button showing brands instead
+	**i've fixed this by removing hamburger menu styling from secondary menus but would rather a solution where i can keep the same styling as primary menu
+3. images only for Iman brand are much larger - not an issue for other brands
+4. need to figure out how to connect the functions. right now i can filter but only if if statements meet one condition. ie. for example, if user input = selectedbrand AND selected producttype AND certain ingredient factor, display relative content
+5. producttype and producttag functions only fire if you click on productbrand function first - don't want this
+*/
+
 
  

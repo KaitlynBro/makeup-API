@@ -1,11 +1,14 @@
 footer {
 	background-color: #b5b7c7;
+	p {
+		font-family: 'Raleway', sans-serif;
+	}
 	p:first-child {
 		padding-top: 50px;
-		font-family: 'Raleway', sans-serif;
 	}
 	.fa {
 		padding-bottom: 50px;
+		color: black;
 	}
 }
 

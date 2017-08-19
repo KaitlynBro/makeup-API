@@ -13,7 +13,7 @@
 		<input id="hamburger" type="checkbox" class="hamburger-checkbox">
   		<label for="hamburger" class="hamburger-label" role="button" value="hhh" aria-labelledby="menu">&#xf0c9;</label>
 		<nav role="navigation" class="sidebar">
-			<ul class="menu">
+			<ul class="menu1">
 				<li><input type="radio" name="brand" value="almay" class="makeup-brand-button" data-product-type="almay">Almay</input></li>
 				<li><input type="radio" name="brand" value="anna sui" class="makeup-brand-button">Anna Sui</input></li>
 				<li><input type="radio" name="brand" value="annabelle" class="makeup-brand-button">Annabelle</input></li>
@@ -57,44 +57,46 @@
 	<h1 id="title">What's in Your Makeup Bag?</h1>
 </header>
 <section id="secondaryNavs">
-	<div class="makeupBrands">
-		<input id="hamburger" type="checkbox" class="hamburger-checkbox">
-	  		<label for="hamburger" class="hamburger-label hamburger-label2 makeupTypeNav" role="button" value="hhh" aria-labelledby="menu">&#xf0c9;</label>
-			<nav role="navigation" class="sidebar">
-				<ul class="menu">
-				<li><input type="radio" name="type" value="blush" class="product-type">Blush</input></li>
-				<li><input type="radio" name="type" value="bronzer" class="product-type">Bronzer</input></li>
-				<li><input type="radio" name="type" value="eyebrow" class="product-type">Eyebrow</input></li>
-				<li><input type="radio" name="type" value="eyeliner" class="product-type">Eyeliner</input></li>
-				<li><input type="radio" name="type" value="eyeshadow" class="product-type">Eyeshadow</input></li>
-				<li><input type="radio" name="type" value="foundation" class="product-type">Foundation</input></li>
-				<li><input type="radio" name="type" value="lip_liner" class="product-type">Lip Liner</input></li>
-				<li><input type="radio" name="type" value="lipstick" class="product-type">Lipstick</input></li>
-				<li><input type="radio" name="type" value="mascara" class="product-type">Mascara</input></li>
-				<li><input type="radio" name="type" value="nail_polish" class="product-type">Nail Polish</input></li>
-			</ul>
-		</nav>
-		<input id="hamburger" type="checkbox" class="hamburger-checkbox">
-  		<label for="hamburger" class="hamburger-label hamburger-label2 makeupTagNav" role="button" value="hhh" aria-labelledby="menu">&#xf0c9;</label>
-		<nav role="navigation" class="sidebar">
-			<ul class="menu">
-				<li><input type="radio" name="tag" value="Vegan" class="makeup-ajax-button">Vegan</input></li>
-				<li><input type="radio" name="tag" value="Canadian" class="makeup-ajax-button">Canadian</input></li>
-				<li><input type="radio" name="tag" value="Natural" class="makeup-ajax-button">Natural</input></li>
-				<li><input type="radio" name="tag" value="Sugar Free" class="makeup-ajax-button">Sugar Free</input></li>
-				<li><input type="radio" name="tag" value="Dairy Free" class="makeup-ajax-button">Dairy Free</input></li>
-				<li><input type="radio" name="tag" value="Non-GMO" class="makeup-ajax-button">Non-GMO</input></li>
-				<li><input type="radio" name="tag" value="Fair Trade" class="makeup-ajax-button">Fair Trade</input></li>
-				<li><input type="radio" name="tag" value="Organic" class="makeup-ajax-button">Organic</input></li>
-				<li><input type="radio" name="tag" value="Gluten Free" class="makeup-ajax-button">Gluten Free</input></li>
-				<li><input type="radio" name="tag" value="Peanut Free Product" class="makeup-ajax-button">Peanut Free Product</input></li>
-			</ul>
-		</nav>
-	</div>
 	<div id="aboutWebsite">
 		<p>Have you ever wondered what goes into the makeup that you use? Depending on the brand of makeup, there are various ingredients that can be harmful to your body, especially if you have more sensitive or acne-prone skin.</p>
 		<p>Take a look through some makeup brands here. You can filter by brand, product type, or even by product feature, such as gluten-free, dairy-free, vegan, and more.</p>
-		<p>*Please note: Not every product will provide information on what's in the ingredients. I have included urls to the product page so you may find further information there :).</p>
+		<p><span class="pinkText">Please note:</span> Not every product will provide information on what's in the ingredients. I have included urls to the product page so you may find further information there :).</p>
+	</div>
+	<div id="lists">
+		<div class="makeupBrands">
+			<nav class="secondaryNav">
+				<p class="navTitle">Product Type</p>
+				<ul class="secondaryUl">
+					<li><input type="radio" name="type" value="blush" class="product-type">Blush</input></li>
+					<li><input type="radio" name="type" value="bronzer" class="product-type">Bronzer</input></li>
+					<li><input type="radio" name="type" value="eyebrow" class="product-type">Eyebrow</input></li>
+					<li><input type="radio" name="type" value="eyeliner" class="product-type">Eyeliner</input></li>
+					<li><input type="radio" name="type" value="eyeshadow" class="product-type">Eyeshadow</input></li>
+					<li><input type="radio" name="type" value="foundation" class="product-type">Foundation</input></li>
+					<li><input type="radio" name="type" value="lip_liner" class="product-type">Lip Liner</input></li>
+					<li><input type="radio" name="type" value="lipstick" class="product-type">Lipstick</input></li>
+					<li><input type="radio" name="type" value="mascara" class="product-type">Mascara</input></li>
+					<li><input type="radio" name="type" value="nail_polish" class="product-type">Nail Polish</input></li>
+				</ul>
+			</nav>
+		</div>
+		<div>		
+			<nav class="secondaryNav">
+				<p class="navTitle">Tag List</p>
+				<ul class="secondaryUl">
+					<li><input type="radio" name="tag" value="Vegan" class="makeup-ajax-button">Vegan</input></li>
+					<li><input type="radio" name="tag" value="Canadian" class="makeup-ajax-button">Canadian</input></li>
+					<li><input type="radio" name="tag" value="Natural" class="makeup-ajax-button">Natural</input></li>
+					<li><input type="radio" name="tag" value="Sugar Free" class="makeup-ajax-button">Sugar Free</input></li>
+					<li><input type="radio" name="tag" value="Dairy Free" class="makeup-ajax-button">Dairy Free</input></li>
+					<li><input type="radio" name="tag" value="Non-GMO" class="makeup-ajax-button">Non-GMO</input></li>
+					<li><input type="radio" name="tag" value="Fair Trade" class="makeup-ajax-button">Fair Trade</input></li>
+					<li><input type="radio" name="tag" value="Organic" class="makeup-ajax-button">Organic</input></li>
+					<li><input type="radio" name="tag" value="Gluten Free" class="makeup-ajax-button">Gluten Free</input></li>
+					<li><input type="radio" name="tag" value="Peanut Free Product" class="makeup-ajax-button">Peanut Free Product</input></li>
+				</ul>
+			</nav>
+		</div>
 	</div>
 </section>
 
@@ -102,13 +104,15 @@
 	<div id="makeupContainer"></div>	
 </section>
 
+<button id="refreshPage">Refresh Page</button>
+
 <footer>
 <div id="footerInfo">
 	<p>Made by Kaitlyn Brouwers</p>
+	<p>Contact me: hello@kaitlynbrouwers.com</p>
 	<div>
 		<a href="https://twitter.com/kaitlynbrouwers" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 		<a href="http://bit.ly/2sfyYKV" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-		<a href="https://medium.com/@katiebrouwers" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
 		<a href="https://github.com/KaitlynBro" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 	</div>
 </div>	

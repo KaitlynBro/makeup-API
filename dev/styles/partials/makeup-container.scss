@@ -9,19 +9,46 @@
 }
 
 
-//square menu button for secondary navs
-.hamburger-label2 {
-	position: relative;
-}
-
 #aboutWebsite {
 	display: flex;
     flex-direction: column;
     width: 90%;
-    margin: 20px;
+    background-color: rgba(235, 171, 215, 0.4);
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
     p {
     	margin: 0;
     	line-height: 1.5;
+    }
+}
+
+#lists {
+	text-align: center;
+}
+
+.secondaryNav {
+	width: 90%;
+	margin: 0 auto;
+	.navTitle {
+		padding: 20px;
+	    font-size: 18px;
+	    text-transform: uppercase;
+	    letter-spacing: 1px;
+	    font-family: 'Raleway', sans-serif;
+	    border: 5px solid #ebabd7;
+	    background-color: transparent;
+	}
+}
+
+.secondaryUl {
+	display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    max-height: 60px;
+    li {
+    	margin-right: 15px;
     }
 }
 
@@ -36,8 +63,9 @@
 	font-family: 'Raleway', sans-serif;
 	margin: 50px;
     text-align: center;
-    width: 33.3%;
+    width: 80%;
     border: 20px solid #ebabd7;
+    padding: 20px;
 }
 
 h3 {
@@ -47,4 +75,17 @@ h3 {
 
 .tags {
 	letter-spacing: 1px;
+}
+
+#refreshPage {
+	display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Raleway', sans-serif;
+    border: 5px solid#ebabd7;
+    background-color: transparent;
+    margin-bottom: 100px;
 }
