@@ -38,11 +38,38 @@ makeupApp.displayBrands = function(products) {
         //console.log(filterBrands);
         for (var i = 0; i < filterBrands.length; i++) {
     		console.log(filterBrands[i]);
-    		$('#makeupContainer').append(`<h2>${filterBrands[i].brand}</h2> <h3>${filterBrands[i].name}</h3> <img src="${filterBrands[i].image_link}" alt="" /> <p>${filterBrands[i].tag_list}`)
+    		$('#makeupContainer').append(`
+    			<div class="makeupInfo">
+    				<h2>${filterBrands[i].brand}</h2> 
+    				<h3>${filterBrands[i].name}</h3> 
+    				<img src="${filterBrands[i].image_link}" alt="" /> 
+    				<p class="tags">${filterBrands[i].tag_list}</p>
+    			</div>`)
 		}
+		makeupApp.filterProductTypes(products);
 		makeupApp.filterTags(products);
     })
 } 
+
+makeupApp.filterProductTypes = function(products) {
+	$('.product-type').click(products, function() {
+		$('#makeupContainer').empty();
+		let productTypeSelected = $('input[name=type]:checked').val();
+		console.log(productTypeSelected);
+		const filterProducts = products.filter(function(product) {
+			return product.product_type === productTypeSelected;
+		})
+		for (var i = 0; i < filterProducts.length; i++) {
+			$('#makeupContainer').append(`
+				<div class="makeupInfo">
+					<h2>${filterProducts[i].brand}</h2>
+					<h3>${filterProducts[i].name}</h3> 
+    				<img src="${filterProducts[i].image_link}" alt="" /> 
+    				<p class="tags">${filterProducts[i].tag_list}</p>
+				</div>`)
+		}
+	})
+}
 
 makeupApp.filterTags = function(products) {
 	//console.log(products);
@@ -52,13 +79,19 @@ makeupApp.filterTags = function(products) {
 		let brandSelected = $('input[name=brand]:checked').val();
 		const filterTags = products.filter(function(product) {
 			return product.tag_list == tagSelected;
-			return product.brand === brandSelected; 
 		})
 		for (var i = 0; i < filterTags.length; i++) {
-			$('#makeupContainer').append(`<h2>${filterTags[i].name}</h2> <h3>${filterTags[i].name} <img src="${filterTags[i].image_link}" alt="" />  <p>${filterTags[i].tag_list}`);
+			$('#makeupContainer').append(`
+				<div class="makeupInfo">
+					<h2>${filterTags[i].name}</h2> 
+					<h3>${filterTags[i].name}</h3> 
+					<img src="${filterTags[i].image_link}" alt="" />  
+					<p class="tags">${filterTags[i].tag_list}</p>
+				</div>`);
 		}
 	})
 }   
+
 
 
 $(function(){

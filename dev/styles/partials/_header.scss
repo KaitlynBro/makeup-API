@@ -1,0 +1,108 @@
+$light: #eee;
+$dark: #444;
+$link-color: #39b54a;
+$rhythm: 16px;
+
+
+header {
+	background-image: url('../../assets/header-image.png');
+	height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+h1 {
+	font-size: 40px;
+    background-color: #ebabd7;
+    width: 50%;
+    opacity: 0, 0, 0, 0.5;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+    font-family: 'Petit Formal Script', cursive;
+}
+
+//hidden checkbox that will act as the button when clicking on menu
+.hamburger-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+//square menu button
+.hamburger-label {
+  position: absolute;
+  top: ($rhythm * 2);
+  left: ($rhythm * 2);
+  z-index: 1;
+  display: block;
+  width: 42px;
+  height: 42px;
+  font: 42px/42px fontawesome;
+  text-align: center;
+  color: #fd4da2;
+  cursor: pointer;
+}
+
+.hamburger-checkbox:checked ~ .hamburger-label:before {
+  content: '\f00d';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 42px;
+  height: 42px;
+  font: 42px/42px fontawesome;
+  text-align: center;
+  color: #fd4da2;
+}
+
+.sidebar {
+  overflow: hidden;
+  width: 0;
+  color: $light;
+  transition: all .3s;
+  display: flex;
+}
+
+.hamburger-checkbox:checked ~ .sidebar {
+  width: auto;
+  min-height: 100vh;
+  padding-top: 6.5em;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  box-sizing: border-box;
+  margin-left: 32px;
+  
+  li {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid darken($dark, 10%);
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+    
+    &:last-child {
+      border-bottom: 1px solid darken($dark, 10%);
+    }
+  }
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	height: 30vh;
+}
+
+input[type=radio] {
+	margin: 10px;
+}

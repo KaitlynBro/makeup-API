@@ -1,0 +1,32 @@
+.makeupBrands {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+//square menu button for secondary navs
+.hamburger-label2 {
+	position: relative;
+}
+
+#makeupContainer {
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.makeupInfo {
+	font-family: 'Raleway', sans-serif;
+	margin: 50px;
+    text-align: center;
+}
+
+h3 {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.tags {
+	letter-spacing: 1px;
+}
