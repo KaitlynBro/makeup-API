@@ -102,7 +102,7 @@ makeupApp.filterTags = function(products) {
 document.getElementById('menuButton').addEventListener('click', function() {
 	document.getElementById('title').style.display = 'none';
 })
- 
+
 
 //reload page 
 document.getElementById('refreshPage').addEventListener('click', function() {
@@ -122,12 +122,8 @@ $(function(){
 	makeupApp.init();
 });
 
-
 /*Problems to address
 1. hide h1 on click of main menu button, unhide on second click
-2. why are all my menu buttons all making brands appear? ie. clicking on product type button, ingredient type button showing brands instead
-	**i've fixed this by removing hamburger menu styling from secondary menus but would rather a solution where i can keep the same styling as primary menu
-3. images only for Iman brand are much larger - not an issue for other brands
 4. need to figure out how to connect the functions. right now i can filter but only if if statements meet one condition. ie. for example, if user input = selectedbrand AND selected producttype AND certain ingredient factor, display relative content
 5. producttype and producttag functions only fire if you click on productbrand function first - don't want this
 */
