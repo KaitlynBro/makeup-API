@@ -126,6 +126,7 @@ $(function(){
 1. hide h1 on click of main menu button, unhide on second click
 4. need to figure out how to connect the functions. right now i can filter but only if if statements meet one condition. ie. for example, if user input = selectedbrand AND selected producttype AND certain ingredient factor, display relative content
 5. producttype and producttag functions only fire if you click on productbrand function first - don't want this
+6. why does it take a bit for data to be pulled? should be present right on page load
 */
 
 
