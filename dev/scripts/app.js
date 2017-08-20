@@ -13,9 +13,9 @@ makeupApp.init = function() {
 
 makeupApp.getMakeup = function(productType, productBrand){
 	$.ajax({
-	  url: 'https://makeup-api.herokuapp.com/api/v1/products.jsonp',
+	  url: 'http://makeup-api.herokuapp.com/api/v1/products.json',
 	  method: 'GET',
-	  dataType: 'jsonp',
+	  dataType: 'json',
 	  data: {
 	  	product_type: productType,
 	  	product_brand: productBrand
