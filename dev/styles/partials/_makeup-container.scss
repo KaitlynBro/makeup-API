@@ -9,6 +9,7 @@
 }
 
 
+
 #aboutWebsite {
 	display: flex;
     flex-direction: column;
@@ -23,6 +24,10 @@
     	line-height: 1.5;
     }
 }
+
+// .mobile {
+//     margin-top: 400px;
+// }
 
 #lists {
 	text-align: center;
@@ -48,6 +53,7 @@
     list-style-type: none;
     max-height: 60px;
     flex-wrap: wrap;
+    justify-content: center;
     li {
     	margin-right: 15px;
     }

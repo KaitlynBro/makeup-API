@@ -23,6 +23,8 @@ makeupApp.getMakeup = function(productType, productBrand){
 	}).then(function(res) {
 		// console.log(res)
 		makeupApp.displayBrands(res);
+		makeupApp.filterProductTypes(res);
+		makeupApp.filterTags(res);
 	});
 };
 
@@ -98,10 +100,19 @@ makeupApp.filterTags = function(products) {
 	})
 }
 
-//remove h1 from DOM once menu button is pressed to avoid overlap
-document.getElementById('menuButton').addEventListener('click', function() {
-	document.getElementById('title').style.display = 'none';
-})
+//changing margin-top on aboutWebsite section to account for h1 sliding down and overlapping text on click of hamburger menu button
+window.addEventListener('resize', function(event){
+  var win = $(window);
+      if (win.width() < 514) { 
+      console.log('resized');
+      //$('aboutWebsite').addClass('mobile');
+      document.getElementById('aboutWebsite').style.marginTop = '400px'; 
+       }
+    else
+    {
+    	document.getElementById('aboutWebsite').style.marginTop = '100px';
+    }
+});
 
 
 //reload page 
@@ -123,9 +134,7 @@ $(function(){
 });
 
 /*Problems to address
-1. hide h1 on click of main menu button, unhide on second click
 4. need to figure out how to connect the functions. right now i can filter but only if if statements meet one condition. ie. for example, if user input = selectedbrand AND selected producttype AND certain ingredient factor, display relative content
-5. producttype and producttag functions only fire if you click on productbrand function first - don't want this
 6. why does it take a bit for data to be pulled? should be present right on page load
 */
 

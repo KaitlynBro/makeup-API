@@ -259,7 +259,8 @@ input[type=radio] {
   flex-direction: row;
   list-style-type: none;
   max-height: 60px;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center; }
   .secondaryUl li {
     margin-right: 15px; }
 
