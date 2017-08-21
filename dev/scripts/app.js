@@ -1,16 +1,11 @@
-//on page load, display nav bar with all brands
-//if user clicks on certain brand, bring up all of that brands makeup
-//also bring up new nav bar with the different product types
-//if user clicks on certain product type, display only that product brand and type
-//also now display new nav bar with product tags (ie. vegan, gluten free, etc)
-//if user clicks on a certain tag, display only that brands product type that fits that tag
-
 const makeupApp = {}
 
+//init function that holds the function I want fired on page load
 makeupApp.init = function() {
 	makeupApp.getMakeup();
 }
 
+//ajax request to access makeup API data
 makeupApp.getMakeup = function(productType, productBrand){
 	$.ajax({
 	  url: 'https://makeup-api.herokuapp.com/api/v1/products.json',
@@ -20,26 +15,29 @@ makeupApp.getMakeup = function(productType, productBrand){
 	  	product_type: productType,
 	  	product_brand: productBrand
 	  }
+	  //my 3 functions that I want available once ajax request is complete
 	}).then(function(res) {
-		// console.log(res)
 		makeupApp.displayBrands(res);
 		makeupApp.filterProductTypes(res);
 		makeupApp.filterTags(res);
 	});
 };
 
-//if user clicks on certain brand, append name of that brand to page and all of the related makeup
+
 makeupApp.displayBrands = function(products) {
-    //console.log(products)
+	//on click of makeup brand radio buttons, access product data
     $('.makeup-brand-button').click(products, function() {
+    	//empty container to remove existing content
     	$('#makeupContainer').empty();
+    	//store the value of the radio button user clicked on into variable
         let brandSelected = $('input[name=brand]:checked').val();
+        //filter through product data, and return the brand that is exactly equal to users input
         const filterBrands = products.filter(function(product) {
             return product.brand === brandSelected;
         })
-        //console.log(filterBrands);
+        //loop over the filtered brands, and for every piece of data that comes back...
+        	//dynamically create a div that will hold all of the product data, including h2, p tags, images, etc.
         for (var i = 0; i < filterBrands.length; i++) {
-    		console.log(filterBrands[i]);
     		$('#makeupContainer').append(`
     			<div class="makeupInfo">
     				<h2>${filterBrands[i].brand}</h2> 
@@ -50,19 +48,22 @@ makeupApp.displayBrands = function(products) {
     				<p>${filterBrands[i].description}</p>
     			</div>`)
 		}
-		makeupApp.filterProductTypes(products);
-		makeupApp.filterTags(products);
     })
 } 
 
 makeupApp.filterProductTypes = function(products) {
+	//on click of makeup product type radio buttons, access product data
 	$('.product-type').click(products, function() {
+		//empty container to remove existing content
 		$('#makeupContainer').empty();
+		//store the value of the radio button user clicked on into variable
 		let productTypeSelected = $('input[name=type]:checked').val();
-		console.log(productTypeSelected);
+		//filter through product data, and return the product type that is exactly equal to users input
 		const filterProducts = products.filter(function(product) {
 			return product.product_type === productTypeSelected;
 		})
+		//loop over the filtered products, and for every piece of data that comes back...
+        	//dynamically create a div that will hold all of the product data, including h2, p tags, images, etc.
 		for (var i = 0; i < filterProducts.length; i++) {
 			$('#makeupContainer').append(`
 				<div class="makeupInfo">
@@ -78,14 +79,18 @@ makeupApp.filterProductTypes = function(products) {
 }
 
 makeupApp.filterTags = function(products) {
-	//console.log(products);
+	//on click of makeup product type radio buttons, access product data
 	$('.makeup-ajax-button').click(products, function() {
+		//empty container to remove existing content
 		$('#makeupContainer').empty();
+		//store the value of the radio button user clicked on into variable
 		let tagSelected = $('input[name=tag]:checked').val();
-		let brandSelected = $('input[name=brand]:checked').val();
+		//filter through product data, and return the tags that are exactly equal to users input
 		const filterTags = products.filter(function(product) {
 			return product.tag_list == tagSelected;
 		})
+		//loop over the filtered tags, and for every piece of data that comes back...
+        	//dynamically create a div that will hold all of the product data, including h2, p tags, images, etc.
 		for (var i = 0; i < filterTags.length; i++) {
 			$('#makeupContainer').append(`
 				<div class="makeupInfo">
@@ -104,8 +109,6 @@ makeupApp.filterTags = function(products) {
 window.addEventListener('resize', function(event){
   var win = $(window);
       if (win.width() < 514) { 
-      console.log('resized');
-      //$('aboutWebsite').addClass('mobile');
       document.getElementById('aboutWebsite').style.marginTop = '400px'; 
        }
     else
@@ -115,9 +118,8 @@ window.addEventListener('resize', function(event){
 });
 
 
-//reload page 
+//reload page on click of refresh button
 document.getElementById('refreshPage').addEventListener('click', function() {
-	console.log('hi');
 	location.reload();
 	window.scrollTo(0, 0);
 })
